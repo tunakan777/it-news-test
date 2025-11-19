@@ -2,6 +2,8 @@ services:
   - type: web
     name: it-news-test
     runtime: python
-    buildCommand: ""
-    startCommand: "python app.py"
+    rootDirectory: mkdir
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn app:app"
+
 
