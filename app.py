@@ -4,7 +4,18 @@ app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    # JSONファイルを読み込む
+    try:
+        with open('hatena_ranking.json', 'r', encoding='utf-8') as f:
+            articles = json.load(f)
+        # 上位3件だけ取得
+        top_articles = articles[:3]
+    except FileNotFoundError:
+        # JSONファイルがない場合は空リスト
+        top_articles = []
+    
+    # HTMLにデータを渡す
+    return render_template("index.html", articles=top_articles)
 @app.route("/about")
 def about():
     return render_template("about.html")

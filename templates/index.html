@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT学生のための3分で分かるトレンドニュース</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <!-- ヘッダー -->
@@ -26,35 +26,17 @@
             <main class="content-area">
                 <h2 class="section-title">〜 今日のトレンド 〜</h2>
 
+                {% for article in articles %}
                 <article class="article-item">
-                    <span class="article-rank">No.1</span>
-                    <h3 class="article-title">タイトル</h3>
-                    <a href="#" class="article-link">リンク</a>
+                    <span class="article-rank">No.{{ loop.index }}</span>
+                    <h3 class="article-title">{{ article.title }}</h3>
+                    <a href="{{ article.link }}" class="article-link" target="_blank">記事を読む</a>
                     <div class="article-meta">
-                        <span class="article-source">出典元: ○○○○</span>
-                        <span class="article-bookmarks">🔖 ブックマーク数</span>
+                        <span class="article-source">公開日: {{ article.published_date }}</span>
+                        <span class="article-bookmarks">🔖 {{ article.hatebu_count }}</span>
                     </div>
                 </article>
-
-                <article class="article-item">
-                    <span class="article-rank">No.2</span>
-                    <h3 class="article-title">タイトル</h3>
-                    <a href="#" class="article-link">リンク</a>
-                    <div class="article-meta">
-                        <span class="article-source">出典元: ○○○○</span>
-                        <span class="article-bookmarks">🔖 ブックマーク数</span>
-                    </div>
-                </article>
-
-                <article class="article-item">
-                    <span class="article-rank">No.3</span>
-                    <h3 class="article-title">タイトル</h3>
-                    <a href="#" class="article-link">リンク</a>
-                    <div class="article-meta">
-                        <span class="article-source">出典元: ○○○○</span>
-                        <span class="article-bookmarks">🔖 ブックマーク数</span>
-                    </div>
-                </article>
+                {% endfor %}
             </main>
         </div>
     </div>
