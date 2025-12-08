@@ -1,25 +1,73 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>テストページ</title>
-
-    <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/ranking">Ranking</a>
-        <a href="/contact">Contact</a>
-    </nav>
-
-    <link rel="stylesheet" href="style.css">
+    <title>IT学生のための3分で分かるトレンドニュース</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>こんにちは！</h1>
-    <p>これはテストページです。</p>
-    <script src="script.js"></script>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-content">
+            <h1>IT学生のための3分で分かるトレンドニュース</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <aside class="sidebar">
+                <a href="/" class="sidebar-btn top-btn">TOPに戻る</a>
+                <a href="/ranking" class="sidebar-btn">ランキング</a>
+                <a href="/contact" class="sidebar-btn">ワードで検索</a>
+                <a href="/about" class="sidebar-btn">カテゴリで検索</a>
+            </aside>
+
+            <main class="content-area">
+                <h2 class="section-title">〜 今日のトレンド 〜</h2>
+
+                <article class="article-item">
+                    <span class="article-rank">No.1</span>
+                    <h3 class="article-title">タイトル</h3>
+                    <a href="#" class="article-link">リンク</a>
+                    <div class="article-meta">
+                        <span class="article-source">出典元: ○○○○</span>
+                        <span class="article-bookmarks">🔖 ブックマーク数</span>
+                    </div>
+                </article>
+
+                <article class="article-item">
+                    <span class="article-rank">No.2</span>
+                    <h3 class="article-title">タイトル</h3>
+                    <a href="#" class="article-link">リンク</a>
+                    <div class="article-meta">
+                        <span class="article-source">出典元: ○○○○</span>
+                        <span class="article-bookmarks">🔖 ブックマーク数</span>
+                    </div>
+                </article>
+
+                <article class="article-item">
+                    <span class="article-rank">No.3</span>
+                    <h3 class="article-title">タイトル</h3>
+                    <a href="#" class="article-link">リンク</a>
+                    <div class="article-meta">
+                        <span class="article-source">出典元: ○○○○</span>
+                        <span class="article-bookmarks">🔖 ブックマーク数</span>
+                    </div>
+                </article>
+            </main>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; 2024 IT NEWS. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
