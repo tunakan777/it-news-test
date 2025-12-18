@@ -6,10 +6,10 @@
 
 body {
     font-family: 'Hiragino Kaku Gothic Pro', 'Meiryo', sans-serif;
-    background-color: #C4D1EA;
+    /* background-color: #C4D1EA; */
     /* 自作背景画像を使う場合は以下のコメントを外す */
-    /* background: url('/static/images/background.jpg') no-repeat center center fixed; */
-    /* background-size: cover; */
+    background: url('/static/images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
     min-height: 100vh;
     margin: 0;
     display: flex;
