@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ランキング - IT学生のための3分で分かるトレンドニュース</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .construction-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+            text-align: center;
+        }
+
+        .construction-icon {
+            font-size: 5em;
+            margin-bottom: 30px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .construction-title {
+            font-size: 2em;
+            color: #2c3e7a;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .construction-message {
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .back-btn {
+            background: #8b5cf6;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: all 0.3s;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .back-btn:hover {
+            background: #7c3aed;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header class="site-header">
+        <div class="header-content">
+            <h1>IT学生のための3分で分かるトレンドニュース</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="main-content">
+            <aside class="sidebar">
+                <a href="/" class="sidebar-btn">TOPに戻る</a>
+                <a href="/ranking" class="sidebar-btn top-btn">ランキング</a>
+                <a href="/contact" class="sidebar-btn">ワードで検索</a>
+                <a href="/about" class="sidebar-btn">カテゴリで検索</a>
+            </aside>
+
+            <main class="content-area">
+                <div class="construction-box">
+                    <div class="construction-icon">🚧</div>
+                    <h2 class="construction-title">このページは開発中です</h2>
+                    <p class="construction-message">
+                        現在、ランキング機能を鋭意制作中です。<br>
+                        もうしばらくお待ちください！
+                    </p>
+                    <a href="/" class="back-btn">トップページに戻る</a>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="copyright">
+                &copy; 2024 IT NEWS. All rights reserved.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
