@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT学生のための3分で分かるトレンドニュース</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <!-- ヘッダー -->
@@ -24,7 +24,10 @@
             </aside>
 
             <main class="content-area">
-                <h2 class="section-title">〜 今日のトレンド 〜</h2>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px;">
+                    <h2 class="section-title" style="margin: 0; border: none; padding: 0;">〜 今日のトレンド 〜</h2>
+                    <button onclick="updateData()" style="background: #8b5cf6; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 1em; font-weight: bold; cursor: pointer; transition: all 0.3s; box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);" onmouseover="this.style.background='#7c3aed'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='#8b5cf6'; this.style.transform='translateY(0)'">🔄 データ更新</button>
+                </div>
 
                 {% for article in articles %}
                 <article class="article-item">
@@ -50,6 +53,24 @@
         </div>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    <script>
+    function updateData() {
+        // ボタンを無効化して二重クリック防止
+        event.target.disabled = true;
+        event.target.textContent = '更新中...';
+        
+        fetch('/update', {method: 'POST'})
+        .then(res => res.json())
+        .then(data => {
+            alert('更新完了！');
+            location.reload();
+        })
+        .catch(error => {
+            alert('更新に失敗しました: ' + error);
+            event.target.disabled = false;
+            event.target.textContent = '🔄 データ更新';
+        });
+    }
+    </script>
 </body>
 </html>

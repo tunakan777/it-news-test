@@ -17,6 +17,13 @@ def home():
     
     # HTMLにデータを渡す
     return render_template("index.html", articles=top_articles)
+
+@app.route('/update', methods=['POST'])
+def update_data():
+    import subprocess
+    subprocess.run(['python', 'main.py'])
+    return {'status': 'success'}
+
 @app.route("/about")
 def about():
     return render_template("about.html")
