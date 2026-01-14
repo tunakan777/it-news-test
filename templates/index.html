@@ -71,8 +71,7 @@
         .then(data => {
             console.log('Response data:', data);
             if (data.status === 'success') {
-                alert('更新完了！ページを再読み込みします。');
-                location.reload();
+                alert('バックグラウンドで更新を開始しました。\n1分後にページを再読み込みしてください。');
             } else if (data.error) {
                 alert('更新エラー: ' + data.error);
                 button.disabled = false;
