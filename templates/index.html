@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IT学生のための3分で分かるトレンドニュース</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
     <!-- ヘッダー -->
@@ -55,20 +55,35 @@
 
     <script>
     function updateData() {
+        const button = event.target;
         // ボタンを無効化して二重クリック防止
-        event.target.disabled = true;
-        event.target.textContent = '更新中...';
+        button.disabled = true;
+        button.textContent = '更新中...';
         
         fetch('/update', {method: 'POST'})
-        .then(res => res.json())
+        .then(res => {
+            console.log('Response status:', res.status);
+            if (!res.ok) {
+                throw new Error('サーバーエラー: ' + res.status);
+            }
+            return res.json();
+        })
         .then(data => {
-            alert('更新完了！');
-            location.reload();
+            console.log('Response data:', data);
+            if (data.status === 'success') {
+                alert('更新完了！ページを再読み込みします。');
+                location.reload();
+            } else if (data.error) {
+                alert('更新エラー: ' + data.error);
+                button.disabled = false;
+                button.textContent = '🔄 データ更新';
+            }
         })
         .catch(error => {
-            alert('更新に失敗しました: ' + error);
-            event.target.disabled = false;
-            event.target.textContent = '🔄 データ更新';
+            console.error('Error:', error);
+            alert('更新に失敗しました。\n\n詳細: ' + error.message + '\n\nブラウザのコンソール(F12)を確認してください。');
+            button.disabled = false;
+            button.textContent = '🔄 データ更新';
         });
     }
     </script>
