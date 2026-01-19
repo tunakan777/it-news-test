@@ -2,76 +2,76 @@
   {
     "rank": 1,
     "word": "AI",
-    "count": 11
+    "count": 19
   },
   {
     "rank": 2,
-    "word": "開発",
-    "count": 10
+    "word": "Code",
+    "count": 5
   },
   {
     "rank": 3,
-    "word": "エンジニア",
-    "count": 6
+    "word": "Claude",
+    "count": 4
   },
   {
     "rank": 4,
-    "word": "Web",
-    "count": 5
+    "word": "GitHub",
+    "count": 4
   },
   {
     "rank": 5,
-    "word": "Google",
-    "count": 5
+    "word": "仕事",
+    "count": 4
   },
   {
     "rank": 6,
-    "word": "駆動",
-    "count": 5
+    "word": "Skills",
+    "count": 3
   },
   {
     "rank": 7,
-    "word": "言語",
-    "count": 4
+    "word": "アプリ",
+    "count": 3
   },
   {
     "rank": 8,
-    "word": "時代",
-    "count": 4
+    "word": "証明",
+    "count": 3
   },
   {
     "rank": 9,
-    "word": "ビジネス",
-    "count": 4
+    "word": "利用",
+    "count": 3
   },
   {
     "rank": 10,
-    "word": "中国",
+    "word": "動画",
     "count": 3
   },
   {
     "rank": 11,
-    "word": "IT",
+    "word": "エンジニア",
     "count": 3
   },
   {
     "rank": 12,
-    "word": "年版",
+    "word": "vs",
     "count": 3
   },
   {
     "rank": 13,
-    "word": "Code",
-    "count": 3
+    "word": "衝撃",
+    "count": 2
   },
   {
     "rank": 14,
-    "word": "成功",
-    "count": 3
+    "word": "発表",
+    "count": 2
   },
   {
     "rank": 15,
-    "word": "転職",
-    "count": 3
+    "word": "川崎",
+    "count": 2
   }
 ]
